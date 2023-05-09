@@ -25,8 +25,28 @@ murali sunadarmoorthi, MCCI 07 2023
 
 */
 
+
 #include <stdio.h>
 
+/******************************************************************************\
+  This module is an example module. 
+  
+  (Text explanation of contents of file, as long as required.) 
+  
+  At one time, specially-formatted ‘help’ program text was embedded here 
+  also, to aid in maintaining a separate ‘help’ facility. 
+  
+\******************************************************************************/
+
+
+/****************************************************************************\ 
+  
+  Manifest constants & typedefs. 
+  
+ This is strictly for private types and constants which will not 
+  be exported. 
+ 
+\****************************************************************************/ 
 
 typedef struct office
 {
@@ -36,6 +56,32 @@ char name[100];
  int out_time;  // in hours only
 }data;
 
+
+
+/****************************************************************************\ 
+  
+  Read-only data. 
+  
+  If program is to be ROM-able, these must all be tagged read-only 
+  using the ROM storage class; they may be global. 
+  
+\****************************************************************************/
+
+
+/****************************************************************************\ 
+  
+  VARIABLES: 
+  
+  If program is to be ROM-able, these must be initialized 
+  using the BSS keyword. (This allows for compilers that require 
+  every variable to have an initializer.) Note that only those 
+  variables owned by this module should be declared here, using the BSS 
+  keyword; this allows for linkers that dislike multiple declarations 
+  of objects. 
+ 
+\****************************************************************************/
+
+
 /*
 name: main()
 
@@ -44,7 +90,8 @@ function: collectinfg the data from user and display the data
 definition: void main();
 
 description:
-creating array of object for the structure and through that fetch the empolyee data from user and stored the data for the purpose of future like refer the data in month end for salary calculation etc..
+creating array of object for the structure variable and through that fetch the empolyee data from user using iteration method
+stored the data for the purpose of future like refer the data in month end for salary calculation etc..
 
 returns: nothing going to return cause of main is void type 
 */
