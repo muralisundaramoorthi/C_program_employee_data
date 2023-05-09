@@ -1,4 +1,4 @@
-/* office_data  mon 05 07 2023  05:03:15  murali*/
+/* office_data  Mon May 07 2023  05:03:15  murali*/
 /*
 
 module: office_data
@@ -6,7 +6,7 @@ module: office_data
 function: 
 this is going to collect the data's of employee's in office and stored it in a file for future purpose
 
-version: 1.0.0a mon 05 07 2023 05:04:10 murali 
+version: v1.0.0a Mon May 07 2023 05:04:10 murali 
 
 Copyright notice:
 This file copyright (C) 2023 by
@@ -21,7 +21,7 @@ This file is proprietary information, and may not be disclosed or
 copied without the prior permission of MCCI Corporation.
 
 Author:
-murali sunadarmoorthi, MCCI 07 2023
+Murali Sunadarmoorthi, MCCI 07 2023
 
 */
 
@@ -49,14 +49,18 @@ murali sunadarmoorthi, MCCI 07 2023
 \****************************************************************************/ 
 
 typedef struct office
-{
-char name[100];
- int id ;
- int  in_time; // in hours only
- int out_time;  // in hours only
-}data;
+  {
+  char employeeName[100];
+  int employeeId ;
+  int officeIn_time; // in hours only
+  int officeOut_time;  // in hours only
+  } data;
 
+// struct sOffice {
+//   char candidateName[20];
+// };
 
+// typedef struct sOffice data;
 
 /****************************************************************************\ 
   
@@ -83,9 +87,9 @@ char name[100];
 
 
 /*
-name: main()
+Name: main()
 
-function: collectinfg the data from user and display the data
+Function: collectinfg the data from user and display the data
 
 definition: void main();
 
@@ -96,29 +100,31 @@ stored the data for the purpose of future like refer the data in month end for s
 returns: nothing going to return cause of main is void type 
 */
 
-void main()
-{
-     data e1[3];
-     char i;
- for(i=1;i<=3;i++)
- {    
-    printf("enter the name of employee %d: ",i);
-     scanf(" %s", e1[i].name);
-     printf("enter the id : ");
-     scanf("%d", &e1[i].id);
-     printf("enter the in time  : ");
-     scanf("%d", &e1[i].in_time);
-     printf("enter the out time : ");
-     scanf("%d", &e1[i].out_time);
- }
+int main()
+  {
+  data e1[3];
+  char i;
+  for(i = 1; i <= 3; i++)
+    {    
+    printf("Enter the name of employee %d: ", i);
+    scanf(" %s", e1[i].employeeName);
+    printf("enter the id : ");
+    scanf("%d", &e1[i].id);
+    printf("enter the in time  : ");
+    scanf("%d", &e1[i].in_time);
+    printf("enter the out time : ");
+    scanf("%d", &e1[i].out_time);
+    }
 
-     printf("---------------------------------------\n");
-   for(i=1;i<=3;i++)
-{
-     printf(" name of employee :%s\n", e1[i].name);
-     printf("employee id : %d\n", e1[i].id);
-     printf(" in_time : %d\n", e1[i].in_time);
-     printf("out_time :%d\n", e1[i].out_time);
-     printf("---------------------------------------\n");
-}
-}
+  printf("---------------------------------------\n");
+  for(i = 1; i <= 3; i++)
+    {
+    printf(" name of employee :%s\n", e1[i].employeeName);
+    printf("employee id : %d\n", e1[i].id);
+    printf(" in_time : %d\n", e1[i].in_time);
+    printf("out_time :%d\n", e1[i].out_time);
+    printf("---------------------------------------\n");
+    }
+
+  return 0;
+  }
